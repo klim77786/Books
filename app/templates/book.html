@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Название: {{ context.book.name }}</li>
+        <li class="list-group-item">Автор: {{ context.book.author_name}}</li>
+        <li class="list-group-item">Цена: {{ context.book.price}}</li>
+        <li class="list-group-item">Год: {{ context.book.year }}</li>
+        <a href={% url 'all_books' %} class="btn btn-primary">Отзыв на книгу</a>
+
+    </ul>
+</div>
+{% endblock %}
+</html>

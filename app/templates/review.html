@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Отзывы {{ context.book.name }}{% endblock %}
+{% block content %}
+<div class="card text-center">
+    <div class="card-body">
+        <h5 class="card-title">Отзывы на книгу "{{ context.book.name }}"</h5>
+        {% for review in context.reviews %}
+        <p class="card-text">{{ review.created_at|date:'d-m-Y H:i' }} <br> {{ review.text }}</p>
+        {% endfor %}
+        <a href={% url 'all_books' %} class="btn btn-primary">Перейти к покупке книги</a>
+    </div>
+    <div class="card-footer text-muted">
+        Всего отзывов на книгу {{ context.reviews|length }}
+    </div>
+</div>
+
+{% endblock %}
